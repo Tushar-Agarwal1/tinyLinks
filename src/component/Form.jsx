@@ -8,7 +8,7 @@ const Form = () => {
         e.preventDefault();
         console.log("hii");
         
-      await  axios.post('/api/short', {
+      await  axios.post('https://tiny-links-aw1j.onrender.com/api/short', {
           input:input
         })
         .then((response) => {
