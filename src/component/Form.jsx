@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import "./form.css"
 import axios from 'axios'
+import Result from './result'
 
 const Form = () => {
   const[input,setInput]=useState("");
+  const[result,setResult]=useState(false);
+  const[shortUrl,setShortUrl]=useState("");
     const handle=async (e)=>{
         e.preventDefault();
         console.log("hii");
@@ -12,7 +15,11 @@ const Form = () => {
           input:input
         })
         .then((response) => {
+          
+          console.log("bue");
           console.log(response.data);
+          setShortUrl(response.data);
+          setResult(true);
             // Handle data
         })
         .catch((error) => {
@@ -35,6 +42,7 @@ const Form = () => {
             <button className='form-button' type='submit' >short</button>
             
         </form>
+        {result?<Result shortUrl={shortUrl}/>:null}
     </div>
   )
 }
