@@ -9,14 +9,14 @@ const Form = () => {
   const[shortUrl,setShortUrl]=useState("");
     const handle=async (e)=>{
         e.preventDefault();
-        console.log("hii");
         
-      await  axios.post('https://tiny-links-aw1j.onrender.com/api/short', {
+        
+      await  axios.post('https://microurl.me/short', {
           input:input
         })
         .then((response) => {
           
-          console.log("bue");
+          console.log("micro");
           console.log(response.data);
           setShortUrl(response.data);
           setResult(true);
