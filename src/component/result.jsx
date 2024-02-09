@@ -3,8 +3,7 @@ import "./result.css"
 
 const result = ({shortUrl}) => {
     const copy=()=>{
-        console.log("tushki"+shortUrl);
-        
+       
         window.navigator.clipboard.writeText(shortUrl);
     }
   return (

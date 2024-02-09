@@ -15,15 +15,11 @@ const Form = () => {
           input:input
         })
         .then((response) => {
-          
-          console.log("micro");
-          console.log(response.data);
           setShortUrl(response.data);
           setResult(true);
-            // Handle data
         })
         .catch((error) => {
-          console.log(error);
+          // console.log(error);
         })
         
         
